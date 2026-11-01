@@ -75,7 +75,6 @@ Exercício 6 ($_POST). Crie um formulário HTML com os campos nome e email (mét
 
 /*
 Exercício 7 ($_SESSION). Crie ex07_login.php, que inicia a sessão com session_start() e grava $_SESSION['usuario'] = 'Ana'. Crie ex07_ver.php, que também inicia a sessão e exibe o usuário se isset($_SESSION['usuario']), ou "Sem sessão ativa" caso contrário. Por fim, crie ex07_sair.php, que usa session_unset() e session_destroy(), e teste o fluxo completo.
-
 */
 
 /*
