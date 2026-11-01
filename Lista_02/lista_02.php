@@ -99,7 +99,7 @@ $retorno = [
     ]
 ];
 header('Content-Type: application/json');
-echo json_encode($retorno);
+echo json_encode($retorno) . "\n";
 /*
 Exercício 9 (retorno de falha). Crie ex09.php, que recebe nome por $_POST (ou $_GET, para facilitar o teste). Se o nome estiver vazio, devolva status = 'nok' e mensagem = 'Nome obrigatorio.'; caso contrário, devolva status = 'ok' e mensagem = 'Registro recebido.'. Em ambos os casos, o retorno deve seguir o mesmo formato JSON.
 */
@@ -115,11 +115,38 @@ Parte 4 — Funções (item 7.4)
 /*
 Exercício 11 (declaração e retorno). Escreva a função saudar($nome), que retorna 'Olá, ' . $nome . '!'. Chame a função com dois nomes diferentes e exiba os resultados com echo.
 */
+function saudar($nome) {
+    return 'Olá, ' . $nome . '!';
+}
+
+echo saudar('Luiz Matheus') . "\n";
+echo saudar('Ana') . "\n";
 
 /*
 Exercício 12 (valor padrão). Escreva a função calcularTotal($preco, $quantidade = 1), que retorna o produto dos dois parâmetros. Chame-a passando os dois argumentos e depois passando apenas o preço, exibindo ambos os resultados.
 */
+function calcularTotal($preco, $quantidade = 1) {
+    return $preco * $quantidade;
+}
+
+echo calcularTotal(10, 5) . "\n";
+echo calcularTotal(10) . "\n";
 
 /*
 Exercício 13 (funções nativas). Dada a string $texto = ' Ana Silva ', use trim(), strtolower(), strtoupper() e strlen() e exiba o resultado de cada uma. Depois, escreva a função respostaPadrao($status, $mensagem, $data = []), que retorna o array padrão do projeto (status, mensagem, data), e exiba o resultado de respostaPadrao('ok', 'Funcionando!') com json_encode().
 */
+$texto = ' Ana Silva ';
+echo trim($texto) . "\n";
+echo strtolower($texto) . "\n";
+echo strtoupper($texto) . "\n";
+echo strlen($texto) . "\n";
+
+function respostaPadrao($status, $mensagem, $data = []) {
+    return [
+        'status' => $status,
+        'mensagem' => $mensagem,
+        'data' => $data
+    ];
+}
+
+echo json_encode(respostaPadrao('ok', 'Funcionando!')) . "\n";

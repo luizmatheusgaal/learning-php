@@ -1,0 +1,19 @@
+<!-- Exercício 10 (consumindo o JSON). Depois, crie ex10.html com um botão que, ao clicar, usa fetch('ex10.php') e await resposta.json(); se resposta.status == 'ok',
+exiba o nome de cada produto na tela; caso contrário, exiba alert(resposta.mensagem). -->
+
+<html>
+    <head>
+        <title>Exercício 10</title>
+    </head>
+    <body>
+        <button onclick="fetch('ex10.php').then(response => response.json()).then(data => {
+            if (data.status == 'ok') {
+                data.data.forEach(product => {
+                    document.write(product.nome + '<br>');
+                });
+            } else {
+                alert(data.mensagem);
+            }
+        });">Clique aqui</button>
+    </body>
+</html>
